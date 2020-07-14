@@ -50,3 +50,7 @@ button:active {
     background-color: yellow;
 }
 
+#dataFromDB>p {
+    color: lime;
+}
+

@@ -15,7 +15,7 @@ namespace CodeFirst.Controllers
             db = context;
        }
         [HttpPost]
-        public string GetDataDB(Men person)
+        public string SaveDataDB(Men person)
         {
            
 
@@ -35,5 +35,13 @@ namespace CodeFirst.Controllers
                 return "0";
             }
         }
+
+        [HttpGet]
+        public IQueryable GetData()
+        {
+            var persons = db.Persons.Where(person => person.PersonId > 0);
+            return persons;
+        }
+
     }
 }
