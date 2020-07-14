@@ -1,0 +1,52 @@
+﻿body {
+    background-color: black;
+    color: aqua;
+    text-align: center;
+    margin: 0;
+}
+
+#boxMain {
+    display: grid;
+    grid-template-areas: "First Second";
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+    height: 100vh;
+}
+
+#box_left, #box_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#box_left {
+    grid-area: First;
+}
+
+#box_right {
+    grid-area: Second;
+}
+
+fieldset {
+    text-align: center;
+    width: 200px;
+    border: 1px solid aqua;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #83ebeb;
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    box-shadow: 0 0 7px 3px #83ebeb;
+}
+
+button:active {
+    background-color: yellow;
+}
+

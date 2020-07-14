@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <link href="~/css/styleCodeFirst.css" rel="stylesheet" />
+    <title>MyHTML</title>
+</head>
+<body>
+    <div id="boxMain">
+        <div id="box_left">
+            <h1>Отправка данных на сервер</h1>
+            <fieldset>
+                <legend>Введите ваши данные</legend>
+                <input id="name" type="text" placeholder="Введите ваше имя" autofocus/><br />
+                <input id="age" type="text" placeholder="Введите ваш возраст" /><br />
+                <button id="sentData">Отправить</button>
+            </fieldset>
+            <p id="currentMessage"></p>
+        </div>
+        <div id="box_right">
+            <h1>Получение данных</h1>
+            <fieldset>
+                <legend>Полученные данные</legend>
+                <button>Получить данные</button>
+                <p id="p2"></p>
+            </fieldset>
+            <p id="p3">Данные получены</p>
+        </div>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/codeFirst.js"></script>
+</body>
+</html>
