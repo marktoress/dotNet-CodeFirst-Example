@@ -15,20 +15,20 @@ namespace CodeFirst.Controllers
        {
             db = context;
        }
+
         [HttpPost]
-        public string SaveDataDB([FromBody] object user) // объект user упакован в тип данных object
+        public string SaveDataDB([FromBody] User user)
         {
-            // Десериализация объекта user из json формата к модели Person
-            Person person = JsonConvert.DeserializeObject<Person>(user.ToString());
+            // Присваивание объекту Person значений из объекта User 
+            Person person = new Person 
+            {
+                Name = user.Name,
+                Age = Convert.ToInt32(user.Age) // Преобразуем user.age в число, т.к. person.age 
+            };                                  // имеет числовой тип данных
 
             if(person != null && person.Name != null)
             {
-                db.Persons.Add(new Person
-                {
-                    Name = person.Name,
-                    Age = person.Age
-                });
-
+                db.Persons.Add(person);
                 db.SaveChanges();
                 return "1";
             }

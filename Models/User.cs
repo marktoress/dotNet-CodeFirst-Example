@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace CodeFirst.Models
 {
-    public class Men
+    public class User
     {
         public string Name { get; set; }
-        public int Age { get; set; }
+        public string Age { get; set; }
     }
 }
