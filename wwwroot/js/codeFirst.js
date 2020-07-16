@@ -16,7 +16,8 @@
             $.ajax({
                 url: 'http://localhost:51214/write/saveDataDB',
                 method: 'POST',
-                data: user,
+                contentType: 'application/json',
+                data: JSON.stringify(user),
                 success: function (response) {
                     if (response == 1) {
                         ShowCurrentMessage("Данные сохранены успешно", true);

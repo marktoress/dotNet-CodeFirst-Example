@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CodeFirst.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace CodeFirst.Controllers
 {
@@ -15,9 +16,10 @@ namespace CodeFirst.Controllers
             db = context;
        }
         [HttpPost]
-        public string SaveDataDB(Men person)
+        public string SaveDataDB([FromBody] object user) // объект user упакован в тип данных object
         {
-           
+            // Десериализация объекта user из json формата к модели Person
+            Person person = JsonConvert.DeserializeObject<Person>(user.ToString());
 
             if(person != null && person.Name != null)
             {
