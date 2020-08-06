@@ -10,6 +10,8 @@ namespace CodeFirst.Controllers
 {
     public class WriteController : Controller
     {
+       // List<Person> list = new List<Person>();
+
         PersonContext db;
        public WriteController(PersonContext context)
        {
@@ -41,8 +43,22 @@ namespace CodeFirst.Controllers
         [HttpGet]
         public IQueryable GetData()
         {
-            var persons = db.Persons.Where(person => person.PersonId > 0);
-            return persons;
+            //list = db.Persons.Where(person => person.PersonId > 0).ToList();
+            //List<Person> newList = new List<Person>();
+
+            //int k = list.Count - 1;
+            //for(int i = k; i > -1; i--)
+            //{
+            //    if (i == k - 10)
+            //    {
+            //        break;
+            //    }
+            //    newList.Add(list[i]);
+            //}
+
+            return db.Persons.OrderByDescending(p => p.PersonId).Take(3);
+
+            
         }
 
     }

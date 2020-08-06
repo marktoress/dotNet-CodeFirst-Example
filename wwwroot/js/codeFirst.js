@@ -14,7 +14,7 @@
     function GoBD(user) {
         if (user != null) {
             $.ajax({
-                url: 'http://localhost:51214/write/saveDataDB',
+                url: 'http://localhost:51214/api/apicontroller/joker',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(user),
@@ -50,7 +50,7 @@
 
         let children = $('#dataFromDB').children();
         for (let i = 0; i < children.length; i++) {
-            children[i].remove();
+                children[i].remove();
         }
 
         for (let i = 0; i < data.length; i++) {
